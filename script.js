@@ -1,72 +1,71 @@
-//rock paper scissors program
+let rock = document.querySelector('.rock');
+let paper = document.querySelector('.paper');
+let scissors = document.querySelector('.scissors');
+let results = document.querySelector('#results');
+let score = document.querySelector('#score');
+let tryAgain = document.querySelector('.again');
+let gameOver = false;
+
+function disableButtons() {
+    rock.disabled = true;
+    paper.disabled = true;
+    scissors.disabled = true;
+    tryAgain.style.display = 'block';
+}
+
+let computerScore = 0; //score counters
+let playerScore = 0;
 
 //generate random computer choice
 function getComputerChoice() {
-    let computerChoices = ["rock", "paper", "scissors"]; //store options in array
-    let x = Math.floor(Math.random() * 3); //generate random number from 0-2
+    let computerChoices = ["rock", "paper", "scissors"]; 
+    let x = Math.floor(Math.random() * 3);
 
-    return computerChoices[x]; //return element accessed via random index
+    return computerChoices[x]; 
 }
 
 //compare selections
 function playRound(playerSelection, computerSelection) {
-    //display each win/loss scenario
     if (playerSelection == computerSelection) {
-        return "tie";
+        results.textContent = "Tie";
+        //return "tie" play again
     } 
     else if ((playerSelection == "rock" && computerSelection == "scissors") || 
     (playerSelection == "paper" && computerSelection == "rock") || 
     (playerSelection == "scissors" && computerSelection == "paper")) {
-        return "win";
+        ++playerScore;
+        score.innerHTML = `Player: ${playerScore} Computer: ${computerScore}`;
+        results.innerHTML = `Round won <br> ${playerSelection} beats ${computerSelection}`;
+        if (playerScore == 5) {
+            score.innerHTML = `Winner! <br> <br> Player: ${playerScore} Computer: ${computerScore}`;
+            gameOver = true;
+            disableButtons();
+        }
     }
     else {
-        return "lost";
-    }
+        ++computerScore;
+        score.innerHTML = `Player: ${playerScore} Computer: ${computerScore}`;
+        results.innerHTML = `Round lost <br> Computer chose ${computerSelection}`;
+            if (computerScore == 5) {
+                score.innerHTML = `Computer wins <br> <br> Player: ${playerScore} Computer: ${computerScore}`;
+                gameOver = true;
+                disableButtons();
+            }
+        }
+    return;
 }
 
-function game() {
-    //score counters
-    let computerScore = 0;
-    let playerScore = 0;
-    let result;
+rock.addEventListener('click', () => {
+    if (!gameOver) {
+    playRound("rock", getComputerChoice())}
+})
 
-    //iterate 5 rounds of games
-    for (let i = 0; i < 5; ++i) {
-        //get and store both selections in variables
-        let playerSelection = prompt("Enter rock, paper, or scissors: \n");
-        let computerSelection = getComputerChoice();
+paper.addEventListener('click', () => {
+    if (!gameOver) {
+    playRound("paper", getComputerChoice())}
+})
 
-        //compare results of each round
-        console.log(`Computer chose: ${computerSelection}`);
-        result = playRound(playerSelection.toLowerCase(), computerSelection);
-        console.log(result);
-
-        
-        //increment results
-        if (result == "win") {
-            ++playerScore;
-        }
-        else if (result == "lost") {
-            ++computerScore;
-        }
-        else {
-            continue;
-        }
-        
-    }
-    //display final scores
-    if (playerScore > computerScore) {
-        console.log("You won!");
-    }
-    else if (playerScore < computerScore) {
-        console.log("You lost");
-    }
-    else {
-        console.log("You tied");
-    }
-    console.log(`Your Score: ${playerScore}`);
-    console.log(`Computer Score: ${computerScore}`);
-}
-
-game();
-
+scissors.addEventListener('click', () => {
+    if (!gameOver) {
+    playRound("scissors", getComputerChoice())}
+})
