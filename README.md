@@ -1,4 +1,5 @@
 Rock paper scissors game 
+Play here: https://hstanekz.github.io/rock-paper-scissors/
 
 Part 1:
 Game created using arrays, loops, functions, and access to math library
