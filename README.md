@@ -1,18 +1,34 @@
-Rock paper scissors game 
-Play here: https://hstanekz.github.io/rock-paper-scissors/
+# Rock Paper Scissors Game
+Link: https://hstanekz.github.io/rock-paper-scissors/
 
-Part 1:
-Game created using arrays, loops, functions, and access to math library
+This is a classic game of rock, paper, scissors implemented using using HTML, CSS, and JavaScript.
 
-Part 2:
-Implemented a simple user interface using HTML/CSS/JS
-Remodeled and redesigned initial JavaScript by removing console.logs and replacing with DOM events
-The goal for this project was to attain familiarity with JavaScript syntax as well as manipulating the DOM through events and listeners!
+## Features
 
-Links for icons and images are below:
+The rock paper scissors game has the following features:
 
-rock.png: https://www.pngitem.com/middle/JbixTR_rock-paper-scissors-png-clipart-rock-paper-scissor/
+- Simple user interface with icons for rock, paper, and scissors.
+- User input through button clicks.
+- Game outcome displayed with a message and updated score.
 
-paper.png: https://www.pngitem.com/middle/ThRhJJi_rock-paper-scissors-clipart-rock-paper-scissors-png/
+## Usage
 
-scissors.png: https://www.seekpng.com/ipng/u2q8u2a9q8t4o0i1_rock-paper-scissors-rock-paper-scissors-clipart/
+To play the game, simply click on the icon for rock, paper, or scissors to make your selection. The computer will then make its selection and the game outcome will be displayed. The score is updated with each round played.
+
+## Implementation Details
+
+The game was created using arrays, loops, functions, and access to the math library in JavaScript. The initial JavaScript code was remodeled and redesigned by removing console.logs and replacing them with DOM events.
+
+The game icons for rock, paper, and scissors were sourced from the following links:
+
+- Rock.png: https://www.pngitem.com/middle/JbixTR_rock-paper-scissors-png-clipart-rock-paper-scissor/
+- Paper.png: https://www.pngitem.com/middle/ThRhJJi_rock-paper-scissors-clipart-rock-paper-scissors-png/
+- Scissors.png: https://www.seekpng.com/ipng/u2q8u2a9q8t4o0i1_rock-paper-scissors-rock-paper-scissors-clipart/
+
+## Future Improvements
+
+Some potential improvements for this rock paper scissors game include:
+
+- Adding support for other game modes such as rock, paper, scissors, lizard, spock.
+- Adding support for multiplayer.
+- Improving the user interface with better graphics and animations.
